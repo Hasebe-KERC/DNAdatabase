@@ -1,0 +1,40 @@
+Procedure for creating a DNA dataset 'River16S' for universal primers set, MtInsects-16S.
+
+
+1.Download DNA sequences from the INSDC DNA database.
+
+1-1 Insecta DNA database
+-Nucleotide sequences were downloaded from GenBank using the keyword '16S insecta' (as of 23 July 2023).The Taxonomy ID is also downloaded at this time in Tiny Seq XML format.
+
+-DNA sequence lengths of less than 150 bp were deleted.
+
+-For each sequence, phylogenetic information on the phylum, order, family, genus and species was organised using Taxonomy IDs, taxdump files downloaded from the website of The National Centre for Biotechnology Information and Taxonkit Version: 0.8.0.
+
+-Sequences with no phylogenetic information on genus or species were deleted.
+
+-
+
+1-2 
+
+
+
+
+
+
+
+
+
+
+
+MtInsects-16S用のDNAデータセット「River16S」の作成手順
+＜INSDC DNAデータベースからのDNA配列のダウンロード＞
+〇昆虫綱
+①	GenBankから「16S insecta」をキーワードにしてnucleotide 配列を一括ダウンロードした(2023年7月23日時点)。この時TAXID情報についてもダウンロードするためTiny Seq XML形式とした。
+②	DNAの配列長さが150bp以下のデータは削除した。
+理由：MtInsect16Sプライマーが対象としている超可変領域は概ね200bpを超えるため
+③	残った配列についてusearch v11.0.667のを用いて各プライマーの最大ミスマッチ2の設定でMtInsect16Sプライマーの超可変領域を抜き出すとともに、抜き出した配列については向きの補正を行った。
+
+それぞれの配列については、Taxonomy IDとThe National Center for Biotechnology Informationのホームページからからダウンロードしたtaxdumpファイル、Taxonkitを用いて門、綱、目、科、属、種の系統情報を整理した。
+For each sequence, phylogenetic information on the phylum, order, family, genus and species was organised using Taxonomy IDs, taxdump files downloaded from the website of The National Centre for Biotechnology Information and Taxonkit.
+
+属あるいは種の系統情報がない配列は削除した
