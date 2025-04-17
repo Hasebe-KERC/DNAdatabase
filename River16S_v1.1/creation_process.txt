@@ -1,8 +1,6 @@
-Procedure for creating a DNA dataset 'River16S' for universal primers set, MtInsects-16S.
-
+Procedure for creating a DNA dataset 'River16S' for universal primers set, MtInsects-16S(Takenaka et al., 2023).
 
 1.Download DNA sequences from the INSDC DNA database.
-
 1-1 Insecta DNA database
 -Nucleotide sequences were downloaded from GenBank using the keyword '16S insecta' (as of 23 July 2023).The Taxonomy ID is also downloaded at this time in Tiny Seq XML format.
 
@@ -12,29 +10,24 @@ Procedure for creating a DNA dataset 'River16S' for universal primers set, MtIns
 
 -Sequences with no phylogenetic information on genus or species were deleted.
 
--
+-Sequences were extracted by the search_pcr command in usearch v11.0.667 with a maximum mismatch of 2 with the MtInsects-16S primer for each sequence.
 
-1-2 
+1-2 Other DNA databases
+-Nucleotide sequences were downloaded from GenBank using the keyword '16S Mammalia','16S Actinopterygii','16S Amphibia','16S Aves','16S Gastropoda','16S Malacostraca','16S Arachnida','16S Bivalvia','16S Testudines','16S Oligochaeta','16S Hydrozoa','16S Branchiopoda','16S Diplopoda','16S Collembola','16S Demospongiae','16S Chilopoda','16S Gymnolaemata','16S Enopla','16S Oligostraca','16S Ostracoda','16S Phylactolaemata','16S Diplura','16S Catenulida', (as of 23 July 2023).The Taxonomy ID is also downloaded at this time in Tiny Seq XML format.
+
+-DNA sequence lengths of less than 150 bp were deleted.
+
+-For each sequence, phylogenetic information on the phylum, order, family, genus and species was organised using Taxonomy IDs, taxdump files downloaded from the website of The National Centre for Biotechnology Information and Taxonkit Version: 0.8.0.
+
+-Sequences with no phylogenetic information on genus or species were deleted.
+
+2 Donwload Local DNA database for Japan
+-Downloaded DNA database ver1.2.1 of 16SrRNA region of insects developed by Kanagawa Environmental Research Center(https://www.pref.kanagawa.jp/docs/b4f/suigen/edna-en.html).
+
+3 Integration of DNA databases.
+-The above three databases were integrated to create a DNA database of 16SrRNA regions (River16S_v1.1).
+
+-River16S_v1.1 can be downloaded from Github (https://github.com/Hasebe-KERC/DNAdatabase).
+-Fasta format file can be downloaded from the following address: https://www.dropbox.com/scl/fi/6prrme5bzj588jvm9qfgk/River16Sver1.1.fasta?rlkey=kvy3zgorvyuyqzsoed4558mgo&st=1iqsysmj&dl=0
 
 
-
-
-
-
-
-
-
-
-
-MtInsects-16S用のDNAデータセット「River16S」の作成手順
-＜INSDC DNAデータベースからのDNA配列のダウンロード＞
-〇昆虫綱
-①	GenBankから「16S insecta」をキーワードにしてnucleotide 配列を一括ダウンロードした(2023年7月23日時点)。この時TAXID情報についてもダウンロードするためTiny Seq XML形式とした。
-②	DNAの配列長さが150bp以下のデータは削除した。
-理由：MtInsect16Sプライマーが対象としている超可変領域は概ね200bpを超えるため
-③	残った配列についてusearch v11.0.667のを用いて各プライマーの最大ミスマッチ2の設定でMtInsect16Sプライマーの超可変領域を抜き出すとともに、抜き出した配列については向きの補正を行った。
-
-それぞれの配列については、Taxonomy IDとThe National Center for Biotechnology Informationのホームページからからダウンロードしたtaxdumpファイル、Taxonkitを用いて門、綱、目、科、属、種の系統情報を整理した。
-For each sequence, phylogenetic information on the phylum, order, family, genus and species was organised using Taxonomy IDs, taxdump files downloaded from the website of The National Centre for Biotechnology Information and Taxonkit.
-
-属あるいは種の系統情報がない配列は削除した
